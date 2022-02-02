@@ -1,14 +1,34 @@
+# name: github-actions
+# on: [push]
+
+#  # Allows you to run this workflow manually from the Actions tab
+#  workflow_dispatch
+ 
+# jobs:
+#  job1:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#      # - run: sudo apt install python  
+#      - run: python main.py
+#        env:
+#            first_name : ${{secrets.FNAME}}
+#            last_name : ${{secrets.LNAME}}
+           
 name: github-actions
-on: [push]
-# Allows you to run this workflow manually from the Actions tab
-workflow_dispatch:
- jobs:
-   job1:
-     runs-on: ubuntu-latest
-     steps:
-       - uses: actions/checkout@v2
-       # - run: sudo apt install python  
-       - run: python main.py
-         env:
-             first_name : ${{secrets.FNAME}}
-             last_name : ${{secrets.LNAME}}
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # - run: sudo apt install python  
+      - run: python main.py
+        env:
+            first_name : ${{secrets.FNAME}}
+            last_name : ${{secrets.LNAME}}
