@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # - run: sudo apt install python 
-      - run: echo "${{github.run_number}}"
+      - run: echo ${{github.run_number}}
       # - run: echo "$github.run_number"
       - run: python main.py
         env:
