@@ -15,7 +15,7 @@
 #            first_name : ${{secrets.FNAME}}
 #            last_name : ${{secrets.LNAME}}
            
-name: github-actions
+name: github-actions-demo
 on:
   push:
     branches:
